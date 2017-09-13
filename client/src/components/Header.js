@@ -20,6 +20,9 @@ class Header extends Component {
           <li key="payments">
             <Payments />
           </li>,
+          <li key="credits" style={{ margin: '0 10px' }}>
+            Credits: {this.props.auth.credits}
+          </li>,
           <li key="logout">
             <a href="/api/logout">Logout</a>
           </li>
@@ -37,7 +40,7 @@ class Header extends Component {
               className="left brand-logo"
               style={{ paddingLeft: 12 }}
             >
-              Emaily
+              Pollie
             </Link>
             <ul className="right">
               {this.renderContent()}
