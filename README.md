@@ -1,9 +1,9 @@
-#POLLIE
+# POLLIE
 >**Pollie** is an app used to send out polls to a mass email list. Upon sending, the recipients will receive an email with a poll to answer, which is then sent back to the user for evaluation.
 
 The backend leverages **Express** and **NodeJS**, with **MongoDB** for querying and storage. The frontend utilizes **React/Redux**, **Materialize**, and **ES6**.
 
-##Installation
+## Installation
 MacOS & Linux
 
 ```sh
@@ -13,10 +13,10 @@ npm install
 ```
 *Installation guide still in progress...*
 
-##Features and implementations
+## Features and implementations
 Used the [SendGrid](https://sendgrid.com/) for their API in order to send proper emails and retrieve the necessary data. Survey and their results are saved in MongoDB using the service [mLab](https://mlab.com/). The main app is deployed on Heroku, and it can be located at https://radiant-ridge-45660.herokuapp.com/ (*currently not 100% working, need to localtunnel webhook*).
 
-##TODO
+## TODO
 * Fontend/Features
   * Allow users to sort surveys by date or highest total rated
   * Create attractive landing page
@@ -29,6 +29,6 @@ Used the [SendGrid](https://sendgrid.com/) for their API in order to send proper
   * Allow users to save drafts of their surveys
 * Complete README file
 
-##Meta
+## Meta
 Daniel Rica --- [@REEKAH](http://reekah.now.sh/) --- danrica92@gmail.com
 https://github.com/zeroproduct/Pollie
