@@ -15,7 +15,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="blue-grey lighten-5">
         <BrowserRouter>
           <div>
             <Header />

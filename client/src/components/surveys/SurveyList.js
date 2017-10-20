@@ -23,10 +23,10 @@ class SurveyList extends Component {
             </p>
           </div>
           <div className="card-action">
-            <a>
+            <a className="blue-grey-text lighten-2">
               Yes: {survey.yes}
             </a>
-            <a>
+            <a className="blue-grey-text lighten-2">
               No: {survey.no}
             </a>
           </div>
