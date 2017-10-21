@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSurveys } from '../../actions';
+import { fetchSurveys, deleteSurvey } from '../../actions';
 
 class SurveyList extends Component {
   componentDidMount() {
     this.props.fetchSurveys();
+  }
+
+  deletePost(id) {
+    this.props.deleteSurvey(id, () => {
+      window.location.reload();
+    });
   }
 
   renderSurveys() {
@@ -29,6 +35,13 @@ class SurveyList extends Component {
             <a className="blue-grey-text lighten-2">
               No: {survey.no}
             </a>
+            <button
+              type="submit"
+              className="delete-button red darken-1 btn-flat right white-text"
+              onClick={this.deletePost.bind(this, survey._id)}
+            >
+              <i className="material-icons">delete_forever</i>
+            </button>
           </div>
         </div>
       );
@@ -48,4 +61,6 @@ function mapStateToProps({ surveys }) {
   return { surveys };
 }
 
-export default connect(mapStateToProps, { fetchSurveys })(SurveyList);
+export default connect(mapStateToProps, { fetchSurveys, deleteSurvey })(
+  SurveyList
+);
