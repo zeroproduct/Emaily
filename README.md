@@ -1,4 +1,5 @@
-# POLLIE
+![alt text](https://i.imgur.com/Nok0vNd.png "Pollie")
+
 >**Pollie** is an app used to send out polls to a mass email list. Upon sending, the recipients will receive an email with a poll to answer, which is then sent back to the user for evaluation.
 
 The backend leverages **Express** and **NodeJS**, with **MongoDB** for querying and storage. The frontend utilizes **React/Redux**, **Materialize**, and **ES6**.
