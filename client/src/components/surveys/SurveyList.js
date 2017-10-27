@@ -8,15 +8,12 @@ class SurveyList extends Component {
 
     this.state = {
       surveys: [],
-      initialSurvey: true
+      sortValue: 'date'
     };
   }
 
   componentDidMount() {
     this.props.fetchSurveys();
-    this.setState({
-      surveys: this.props.surveys
-    });
   }
 
   deletePost(id) {
@@ -36,7 +33,8 @@ class SurveyList extends Component {
             {survey.body}
           </p>
           <p className="right">
-            Sent on: {new Date(survey.dateSent).toLocaleDateString()}
+            Sent on: {new Date(survey.dateSent).toLocaleDateString()} at{' '}
+            {new Date(survey.dateSent).toLocaleTimeString()}
           </p>
         </div>
         <div className="card-action">
@@ -72,8 +70,7 @@ class SurveyList extends Component {
     });
 
     this.setState({
-      surveys: surveys,
-      initialSurvey: false
+      surveys: surveys
     });
 
     return surveys.reverse().map(survey => {
@@ -89,8 +86,7 @@ class SurveyList extends Component {
     });
 
     this.setState({
-      surveys: surveys,
-      initialSurvey: false
+      surveys: surveys
     });
 
     return surveys.reverse().map(survey => {
@@ -101,11 +97,20 @@ class SurveyList extends Component {
   render() {
     return (
       <div>
-        Sort by:
-        <button onClick={this.sortListByDate.bind(this)}>Date</button>
-        <button onClick={this.sortListByTitle.bind(this)}>Title</button>
+        <label>Sort by: </label>
+        <button
+          className="waves-effect waves-light btn blue darken-1"
+          onClick={this.sortListByDate.bind(this)}
+        >
+          Date
+        </button>
+        <button
+          className="waves-effect waves-light btn blue darken-1"
+          onClick={this.sortListByTitle.bind(this)}
+        >
+          Title
+        </button>
         {this.renderSurveys()}
-        {console.log(this.props.surveys)}
       </div>
     );
   }

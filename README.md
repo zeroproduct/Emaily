@@ -19,14 +19,14 @@ Used the [SendGrid](https://sendgrid.com/) for their API in order to send proper
 
 ## TODO
 * Fontend/Features
-  * Allow users to sort surveys by date or highest total rated
+  ~~* Allow users to sort surveys by date or highest total rated~~
   * Create attractive landing page
   * Work on styling and colors
   * Change email field from comma separated list to Crumbs
   * Eventually shy away from Materialize and have custom styling
 * Backend/Features
   * Allow for more poll answers (currently only Yes or No)
-  * Let users delete previous surveys
+  ~~* Let users delete previous surveys~~
   * Allow users to save drafts of their surveys
 * Complete README file
 
