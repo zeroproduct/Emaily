@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSurveys, deleteSurvey } from '../../actions';
+import './styles.css';
 
 class SurveyList extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class SurveyList extends Component {
 
   renderCard(survey) {
     return (
-      <div className="card darken-1" key={survey._id}>
+      <div className="hoverable card darken-1" key={survey._id}>
         <div className="card-content">
           <span className="card-title">
             {survey.title}
@@ -97,19 +98,22 @@ class SurveyList extends Component {
   render() {
     return (
       <div>
-        <label>Sort by: </label>
-        <button
-          className="waves-effect waves-light btn blue darken-1"
-          onClick={this.sortListByDate.bind(this)}
-        >
-          Date
-        </button>
-        <button
-          className="waves-effect waves-light btn blue darken-1"
-          onClick={this.sortListByTitle.bind(this)}
-        >
-          Title
-        </button>
+        <div className="sort-container">
+          <label>Sort by: </label>
+          <button
+            className="btn blue-grey lighten-3"
+            onClick={this.sortListByDate.bind(this)}
+          >
+            Date
+          </button>
+          <button
+            className="btn blue-grey lighten-3"
+            onClick={this.sortListByTitle.bind(this)}
+          >
+            Title
+          </button>
+        </div>
+
         {this.renderSurveys()}
       </div>
     );
